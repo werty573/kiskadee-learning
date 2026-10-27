@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kiskadee Learning | CSEC classes online</title>
+<meta name="description" content="Online CSEC courses in Biology, Mathematics, Information Technology and EDPM for Forms 1 to 5 in Trinidad and Tobago.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+/* Radius rule: surfaces 18px, buttons and chips full pill, inputs 12px */
+:root{
+  --bg:#F5F6FA; --surface:#FFFFFF; --surface-2:#E9ECF5; --ink:#0F1430; --muted:#555C78; --line:#DADEEB;
+  --accent:#2445D6; --accent-ink:#FFFFFF; --accent-soft:#E3E8FC;
+  --good:#1D7A4C; --bad:#B4321E; --r:18px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0C0F1F; --surface:#141933; --surface-2:#1C2242; --ink:#E8EBF8; --muted:#A2A8C6; --line:#272E52;
+  --accent:#6E87FF; --accent-ink:#0A0E24; --accent-soft:#1E2858; --good:#5BD497; --bad:#FF8C78;
+}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Bricolage Grotesque',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+@media (max-width:700px){.wrap{padding:0 16px}}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:13px 22px;font-weight:600;font-size:15px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:transform .2s cubic-bezier(.16,1,.3,1)}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-soft{background:var(--accent-soft);color:var(--accent)}
+.btn-line{border:1.5px solid var(--line);background:transparent;color:var(--ink)}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px)}
+.nav{display:flex;align-items:center;gap:28px;height:70px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;text-decoration:none;color:inherit;letter-spacing:-.02em}
+.logo .mk{width:34px;height:34px;border-radius:10px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-size:20px}
+.nav nav{display:flex;gap:24px;margin-left:auto;color:var(--muted);font-weight:500}
+.nav nav a{text-decoration:none}.nav nav a:hover{color:var(--ink)}
+@media (max-width:860px){.nav nav{display:none}.nav .btn{margin-left:auto}}
+@media (max-width:420px){.logo{font-size:18px;white-space:nowrap}.nav .btn{padding:11px 16px}}
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-block:40px 80px;min-height:calc(100dvh - 70px)}
+.hero h1{font-size:clamp(42px,5.4vw,78px);line-height:1;letter-spacing:-.04em;font-weight:800}
+.hero h1 span{color:var(--accent)}
+.hero p{font-size:19px;color:var(--muted);max-width:42ch;margin:22px 0 32px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-vis{position:relative}
+.hero-vis img{width:100%;aspect-ratio:4/4.4;object-fit:cover;border-radius:var(--r)}
+.float{position:absolute;background:var(--surface);border-radius:14px;padding:14px 16px;box-shadow:0 22px 50px -22px rgba(15,20,48,.35);display:flex;gap:12px;align-items:center;font-size:14px}
+.float i{width:38px;height:38px;border-radius:999px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);font-size:20px}
+.float b{display:block;font-size:15px}
+.f1{left:-28px;bottom:56px}.f2{right:-20px;top:40px}
+@media (max-width:900px){.hero{grid-template-columns:1fr;min-height:0;gap:36px;padding-bottom:56px}.f1{left:12px}.f2{right:12px}}
+section{padding:100px 0}
+.h2{font-size:clamp(34px,4vw,56px);letter-spacing:-.035em;line-height:1.05;font-weight:800}
+.lead{color:var(--muted);font-size:18px;max-width:56ch;margin-top:14px}
+/* courses */
+.subj{display:flex;gap:8px;flex-wrap:wrap;margin:36px 0 28px}
+.subj button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:9px 16px;cursor:pointer;font-weight:500}
+.subj button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.courses{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.course{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+.course:hover{transform:translateY(-4px);box-shadow:0 22px 50px -26px rgba(15,20,48,.35)}
+.course.wide{grid-column:span 7}.course.nar{grid-column:span 5}
+.course img{width:100%;height:240px;object-fit:cover}
+.course .in{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.course h3{font-size:26px;letter-spacing:-.02em;line-height:1.1}
+.course .lv{font-size:14px;color:var(--muted);display:flex;gap:16px;flex-wrap:wrap}
+.course .lv span{display:inline-flex;gap:6px;align-items:center}
+.course p{color:var(--muted);font-size:15px}
+.course .foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px}
+.course .pr{font-size:24px;font-weight:800;letter-spacing:-.02em}
+.course .pr small{font-size:14px;font-weight:500;color:var(--muted)}
+details.syl{border-top:1px solid var(--line);padding-top:10px}
+details.syl summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--accent);list-style:none}
+details.syl ul{margin-top:8px;padding-left:18px;color:var(--muted);font-size:14px;columns:2;column-gap:24px}
+@media (max-width:900px){.course.wide,.course.nar{grid-column:span 12}details.syl ul{columns:1}}
+/* quiz */
+.quiz{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.qbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:32px}
+.qtop{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--muted);margin-bottom:18px}
+.qtop .tag{background:var(--accent-soft);color:var(--accent);padding:5px 12px;border-radius:999px;font-weight:600}
+.qbox h3{font-size:24px;letter-spacing:-.02em;line-height:1.25;margin-bottom:20px}
+.opts{display:grid;gap:10px}
+.opts button{display:flex;gap:14px;align-items:center;text-align:left;border:1.5px solid var(--line);background:var(--bg);border-radius:12px;padding:14px 16px;cursor:pointer;font-size:16px;transition:border-color .2s,background .2s}
+.opts button:hover:not(:disabled){border-color:var(--accent)}
+.opts button b{width:30px;height:30px;flex:none;border-radius:999px;display:grid;place-items:center;background:var(--surface-2);font-size:14px}
+.opts button.right{border-color:var(--good);background:color-mix(in srgb,var(--good) 12%,transparent)}
+.opts button.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 10%,transparent)}
+.opts button:disabled{cursor:default}
+.explain{margin-top:18px;padding:16px;border-radius:12px;background:var(--surface-2);font-size:15px;display:none}
+.explain.on{display:block;animation:up .4s cubic-bezier(.16,1,.3,1)}
+@keyframes up{from{opacity:0;transform:translateY(6px)}}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:20px}
+.dots{display:flex;gap:6px}
+.dots span{width:28px;height:6px;border-radius:6px;background:var(--surface-2)}
+.dots span.r{background:var(--good)}.dots span.w{background:var(--bad)}
+.score{text-align:center;padding:16px 0}
+.score strong{font-size:84px;line-height:1;letter-spacing:-.04em;display:block;color:var(--accent)}
+@media (max-width:900px){.quiz{grid-template-columns:1fr;gap:32px}.qbox{padding:22px}}
+/* week */
+.week{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:44px}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;min-height:220px;display:flex;flex-direction:column;gap:10px}
+.day h4{font-size:15px;color:var(--muted);font-weight:600}
+.slot{border-radius:12px;padding:12px;font-size:14px;background:var(--accent-soft);color:var(--ink);border-left:4px solid var(--accent)}
+.slot b{display:block;font-size:15px}
+.slot.alt{background:var(--surface-2);border-left-color:var(--muted)}
+@media (max-width:900px){.week{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.week{grid-template-columns:1fr}.day{min-height:0}}
+/* tutor */
+.tutor{background:var(--accent);color:var(--accent-ink);border-radius:var(--r);display:grid;grid-template-columns:1fr 1.3fr;overflow:hidden}
+.tutor img{width:100%;height:100%;object-fit:cover;min-height:420px}
+.tutor .in{padding:56px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.tutor blockquote{font-size:clamp(24px,2.4vw,32px);line-height:1.25;letter-spacing:-.02em;font-weight:600}
+.tutor .creds{display:flex;flex-wrap:wrap;gap:8px}
+.tutor .creds span{border:1px solid color-mix(in srgb,var(--accent-ink) 35%,transparent);border-radius:999px;padding:7px 14px;font-size:14px}
+@media (max-width:900px){.tutor{grid-template-columns:1fr}.tutor img{min-height:280px;max-height:340px}.tutor .in{padding:28px}}
+/* parents */
+.parents{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:1px solid var(--line)}
+.parents div{padding:28px 28px 0 0}
+.parents div+div{padding-left:28px;border-left:1px solid var(--line)}
+.parents i{font-size:30px;color:var(--accent)}
+.parents h3{font-size:22px;margin:14px 0 6px;letter-spacing:-.02em}
+.parents p{color:var(--muted);font-size:15px}
+@media (max-width:800px){.parents{grid-template-columns:1fr}.parents div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+footer{padding:44px 0 60px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--ink);font-weight:600;text-decoration:none}
+/* enrol modal */
+.scrim{position:fixed;inset:0;background:rgba(8,10,25,.5);opacity:0;pointer-events:none;transition:opacity .3s;z-index:40}
+.scrim.on{opacity:1;pointer-events:auto}
+.modal{position:fixed;inset:0;display:grid;place-items:center;padding:16px;z-index:50;pointer-events:none}
+.modal .box{position:relative;background:var(--surface);border-radius:var(--r);width:min(600px,100%);max-height:92dvh;overflow:auto;padding:32px;opacity:0;transform:translateY(18px) scale(.98);transition:all .4s cubic-bezier(.16,1,.3,1)}
+.modal.on{pointer-events:auto}.modal.on .box{opacity:1;transform:none}
+.x{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:999px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-size:18px;display:grid;place-items:center}
+.plan{display:flex;gap:14px;align-items:flex-start;border:1.5px solid var(--line);border-radius:12px;padding:16px;margin-bottom:10px;cursor:pointer}
+.plan:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+.plan input{margin-top:5px;accent-color:var(--accent)}
+.plan div{flex:1}.plan small{display:block;color:var(--muted)}
+.plan b.p{font-size:18px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.field label{font-size:14px;font-weight:600}
+.field input,.field select{padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);outline:0}
+.field input:focus,.field select:focus{border-color:var(--accent)}
+.field .err{color:var(--bad);font-size:13px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.two{grid-template-columns:1fr}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="#"><span class="mk"><i class="ti ti-feather"></i></span>Kiskadee Learning</a>
+  <nav><a href="#courses">Courses</a><a href="#try">Free practice</a><a href="#timetable">Timetable</a><a href="#tutor">Your tutor</a></nav>
+  <a class="btn btn-primary" href="#courses">Enrol now</a>
+</div></header>
+
+<main>
+  <div class="wrap hero">
+    <div class="reveal">
+      <h1>CSEC prep that <span>actually sticks.</span></h1>
+      <p>Live and self-paced classes in Biology, Maths, IT and EDPM for Forms 1 to 5, taught by one tutor who knows your name.</p>
+      <div class="ctas"><a class="btn btn-primary" href="#courses">Browse courses <i class="ti ti-arrow-right"></i></a><a class="btn btn-line" href="#try">Try a free question</a></div>
+    </div>
+    <div class="hero-vis reveal">
+      <img src="https://images.unsplash.com/photo-1593698054469-2bb6fdf4b512?w=1000&q=75&auto=format&fit=crop" alt="Student with headphones taking notes in front of a laptop" fetchpriority="high">
+      <div class="float f1"><i class="ti ti-video"></i><div><b>Live class tonight</b>Maths, 6:30pm</div></div>
+      <div class="float f2"><i class="ti ti-certificate"></i><div><b>Past papers</b>Marked within 48 hrs</div></div>
+    </div>
+  </div>
+
+  <section id="courses" style="padding-top:20px">
+    <div class="wrap">
+      <h2 class="h2 reveal">Pick a subject, start this week</h2>
+      <div class="subj" id="subj">
+        <button aria-pressed="true" data-s="all">All subjects</button><button aria-pressed="false" data-s="Sciences">Sciences</button><button aria-pressed="false" data-s="Maths">Maths</button><button aria-pressed="false" data-s="Technology">Technology</button>
+      </div>
+      <div class="courses" id="courseGrid"></div>
+    </div>
+  </section>
+
+  <section id="try" style="padding-top:0">
+    <div class="wrap quiz">
+      <div class="reveal">
+        <h2 class="h2">Three questions. See where you stand.</h2>
+        <p class="lead">Real CSEC-style multiple choice, with the working shown after every answer. This is how every lesson ends.</p>
+      </div>
+      <div class="qbox reveal" id="quiz" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="timetable" style="padding-top:0">
+    <div class="wrap">
+      <h2 class="h2 reveal">Live classes, after school</h2>
+      <p class="lead reveal">Every live session is recorded, so missing one never means falling behind.</p>
+      <div class="week reveal" id="week"></div>
+    </div>
+  </section>
+
+  <section id="tutor" style="padding-top:0">
+    <div class="wrap">
+      <div class="tutor reveal">
+        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=72&auto=format&fit=crop" alt="Tutor working through a problem with a student at a computer">
+        <div class="in">
+          <blockquote>“I find the exact step a student is stuck on, then build from there. That's where the grades move.”</blockquote>
+          <div>Your tutor, BSc Information Systems and Management</div>
+          <div class="creds"><span>CSEC Forms 1 to 5</span><span>Small groups of 8</span><span>1-on-1 available</span><span>Past paper marking</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2 class="h2 reveal">Parents see the progress too</h2>
+      <div class="parents reveal">
+        <div><i class="ti ti-report-analytics"></i><h3>Monthly report</h3><p>Topic scores and attendance, sent to you on WhatsApp.</p></div>
+        <div><i class="ti ti-calendar-event"></i><h3>Fixed schedule</h3><p>Same days, same time, all term. Easy to plan around.</p></div>
+        <div><i class="ti ti-credit-card"></i><h3>Pay monthly</h3><p>Card, online banking or bank deposit. Cancel any month.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>Kiskadee Learning, Trinidad and Tobago</span><a href="https://wa.me/18682591409" target="_blank" rel="noopener">Concept build by Portside Digital <i class="ti ti-arrow-up-right"></i></a></div></footer>
+
+<div class="scrim" id="scrim"></div>
+<div class="modal" id="modal"><div class="box"><button class="x" data-close aria-label="Close"><i class="ti ti-x"></i></button><div id="enrol"></div></div></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const IMG=id=>`https://images.unsplash.com/${id}?w=1100&q=70&auto=format&fit=crop`;
+const C=[
+ {id:'math',t:'Mathematics',g:'Maths',forms:'Forms 4 and 5',w:'wide',img:'photo-1509228468518-180dd4864904',from:200,d:'The full CSEC Mathematics syllabus with weekly past paper practice and worked solutions.',syl:['Number theory and computation','Consumer arithmetic','Sets and Venn diagrams','Algebra and functions','Graphs and relations','Geometry and trigonometry','Vectors and matrices','Statistics']},
+ {id:'bio',t:'Biology',g:'Sciences',forms:'Forms 4 and 5',w:'nar',img:'photo-1526930382372-67bf22c0fce2',from:100,d:'Living organisms, life processes and the environment, plus SBA lab report coaching.',syl:['Living organisms and the environment','Cells and life processes','Nutrition and respiration','Transport systems','Reproduction and growth','Genetics and inheritance','SBA lab reports']},
+ {id:'it',t:'Information Technology',g:'Technology',forms:'Forms 1 to 5',w:'nar',img:'photo-1461749280684-dccba630e2f6',from:100,d:'From computer basics in Form 1 to CSEC IT, including Pascal programming and the SBA.',syl:['Computer fundamentals','Problem solving and algorithms','Pascal programming','Spreadsheets','Databases','Word processing','Web page design','SBA project']},
+ {id:'edpm',t:'Electronic Document Preparation and Management',g:'Technology',forms:'Forms 4 and 5',w:'wide',img:'photo-1573643808568-4a3c26f3a06b',from:100,d:'Keyboarding speed, document formatting and records management for the CSEC EDPM exam.',syl:['Keyboarding and speed','Business letters and memos','Tables and reports','Mail merge','Forms and templates','Records management','Office procedures','SBA portfolio']},
+];
+let subj='all';
+function courses(){
+  const list=C.filter(c=>subj==='all'||c.g===subj);
+  const w=list.length===4?null:list.length===2?['wide','nar']:list.length===1?['wide']:null;
+  $('#courseGrid').innerHTML=list.map((c,i)=>`<article class="course ${w?w[i]||'nar':c.w}" ${list.length===1?'style="grid-column:span 12"':''}>
+    <img loading="lazy" src="${IMG(c.img)}" alt="${c.t} course">
+    <div class="in"><div class="lv"><span><i class="ti ti-school"></i>${c.forms}</span><span><i class="ti ti-users"></i>Live or self-paced</span></div>
+    <h3>${c.t}</h3><p>${c.d}</p>
+    <details class="syl"><summary>What's covered</summary><ul>${c.syl.map(s=>`<li>${s}</li>`).join('')}</ul></details>
+    <div class="foot"><span class="pr"><small>from </small>TT$${c.from}<small> / month</small></span><button class="btn btn-primary" data-enrol="${c.id}">Enrol</button></div></div></article>`).join('');
+}
+$('#subj').onclick=e=>{const b=e.target.closest('button');if(!b)return;$$('#subj button').forEach(x=>x.setAttribute('aria-pressed',x===b));subj=b.dataset.s;courses()};
+courses();
+
+/* quiz */
+const Q=[
+ {s:'Mathematics',q:'A shirt costs TT$240. During a sale it is reduced by 15%. What is the sale price?',o:['TT$36','TT$204','TT$225','TT$276'],a:1,e:'15% of 240 is 0.15 × 240 = 36. The sale price is 240 - 36 = TT$204.'},
+ {s:'Biology',q:'Which organelle is the site of aerobic respiration in a cell?',o:['Nucleus','Ribosome','Mitochondrion','Chloroplast'],a:2,e:'Aerobic respiration releases energy from glucose inside the mitochondria. Chloroplasts carry out photosynthesis instead.'},
+ {s:'Information Technology',q:'In Pascal, which statement repeats a block a fixed number of times?',o:['IF ... THEN','WHILE ... DO','FOR ... TO ... DO','REPEAT ... UNTIL'],a:2,e:'FOR loops run a known number of times. WHILE and REPEAT loops depend on a condition, so the count is not fixed in advance.'},
+];
+let qi=0,res=[];
+function quiz(){
+  const box=$('#quiz');
+  if(qi>=Q.length){const sc=res.filter(Boolean).length;box.innerHTML=`<div class="score"><strong>${sc}/3</strong><h3 style="margin-top:10px">${sc===3?'Excellent. You are ready for past papers.':sc===2?'Good start. One topic to tighten up.':'This is exactly what classes fix.'}</h3><p class="lead" style="margin:10px auto 22px">Every course starts with a free placement check like this one.</p><div class="ctas" style="justify-content:center"><a class="btn btn-primary" href="#courses">Browse courses</a><button class="btn btn-line" id="again">Try again</button></div></div>`;$('#again').onclick=()=>{qi=0;res=[];quiz()};return}
+  const x=Q[qi];
+  box.innerHTML=`<div class="qtop"><span class="tag">${x.s}</span><span>Question ${qi+1} of ${Q.length}</span></div><h3>${x.q}</h3>
+   <div class="opts">${x.o.map((o,i)=>`<button data-o="${i}"><b>${'ABCD'[i]}</b>${o}</button>`).join('')}</div>
+   <div class="explain" id="exp"></div>
+   <div class="qnav"><div class="dots">${Q.map((_,i)=>`<span class="${res[i]===true?'r':res[i]===false?'w':''}"></span>`).join('')}</div><button class="btn btn-primary" id="qn" style="visibility:hidden">${qi===Q.length-1?'See score':'Next'} <i class="ti ti-arrow-right"></i></button></div>`;
+  box.querySelector('.opts').onclick=e=>{const b=e.target.closest('button');if(!b||b.disabled)return;const pick=+b.dataset.o;res[qi]=pick===x.a;
+    box.querySelectorAll('.opts button').forEach((btn,i)=>{btn.disabled=true;if(i===x.a)btn.classList.add('right');else if(i===pick)btn.classList.add('wrong')});
+    const ex=$('#exp');ex.innerHTML=`<b>${pick===x.a?'Correct.':'Not quite.'}</b> ${x.e}`;ex.classList.add('on');
+    box.querySelectorAll('.dots span')[qi].className=pick===x.a?'r':'w';$('#qn').style.visibility='visible'};
+  $('#qn').onclick=()=>{qi++;quiz()};
+}
+quiz();
+
+/* week */
+const W={Mon:[['Mathematics','Form 5, 6:30pm'],['IT','Form 3, 4:30pm',1]],Tue:[['Biology','Form 4, 5:00pm'],['EDPM','Form 5, 7:00pm',1]],Wed:[['Mathematics','Form 4, 6:30pm'],['IT Pascal clinic','Forms 4 and 5, 4:30pm',1]],Thu:[['Biology','Form 5, 5:00pm'],['IT','Form 1 and 2, 4:00pm',1]],Fri:[['Past paper hour','All subjects, 5:00pm']]};
+$('#week').innerHTML=Object.entries(W).map(([d,s])=>`<div class="day"><h4>${d}</h4>${s.map(x=>`<div class="slot ${x[2]?'alt':''}"><b>${x[0]}</b>${x[1]}</div>`).join('')}</div>`).join('');
+
+/* enrol */
+let cur;
+function enrol(id){
+  cur=C.find(c=>c.id===id);
+  const plans=[['Self-paced',cur.from,'Recorded lessons, notes and quizzes'],['Live group',cur.from+150,'Two live classes a week, max 8 students, recordings included'],['1-on-1',cur.from+450,'Weekly private session plus everything in Live group']];
+  $('#enrol').innerHTML=`<h3 class="h2" style="font-size:30px;padding-right:40px">${cur.t}</h3><p class="lead" style="margin:6px 0 20px">${cur.forms}. Monthly, cancel any time.</p>
+   ${plans.map((p,i)=>`<label class="plan"><input type="radio" name="pl" value="${i}" ${i===1?'checked':''}><div><b>${p[0]}</b><small>${p[2]}</small></div><b class="p">TT$${p[1]}</b></label>`).join('')}
+   <div class="two" style="margin-top:16px"><div class="field"><label for="sn">Student name</label><input id="sn"><span class="err"></span></div>
+   <div class="field"><label for="sf">Form</label><select id="sf"><option>Form 1</option><option>Form 2</option><option>Form 3</option><option selected>Form 4</option><option>Form 5</option></select></div></div>
+   <div class="field"><label for="sp">Parent's WhatsApp</label><input id="sp" type="tel" placeholder="868 555 0163"><span class="err"></span></div>
+   <button class="btn btn-primary" id="go" style="width:100%;justify-content:center">Continue to payment <i class="ti ti-lock"></i></button>`;
+  $('#go').onclick=()=>{
+    const n=$('#sn').value.trim(),p=$('#sp').value.replace(/\D/g,'');
+    const e1=$('#sn').nextElementSibling,e2=$('#sp').nextElementSibling;e1.textContent=n.length<2?'Add the student\'s name':'';e2.textContent=p.length<7?'Enter a WhatsApp number':'';
+    if(n.length<2||p.length<7)return;
+    const pl=plans[+document.querySelector('input[name=pl]:checked').value];
+    $('#enrol').innerHTML=`<div style="text-align:center;padding:20px 0"><i class="ti ti-circle-check" style="font-size:56px;color:var(--good)"></i><h3 class="h2" style="font-size:30px;margin-top:10px">${n.split(' ')[0]} is enrolled</h3><p class="lead" style="margin:12px auto">${cur.t}, ${pl[0]} at TT$${pl[1]} a month. The class link and first-week notes are on their way to ${$('#sp').value}.</p><button class="btn btn-primary" data-close style="margin-top:10px">Done</button></div>`;
+  };
+  $('#scrim').classList.add('on');$('#modal').classList.add('on');
+}
+document.addEventListener('click',e=>{const en=e.target.closest('[data-enrol]');if(en)enrol(en.dataset.enrol);if(e.target.closest('[data-close]')||e.target.id==='scrim'){$('#scrim').classList.remove('on');$('#modal').classList.remove('on')}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('#scrim').classList.remove('on');$('#modal').classList.remove('on')}});
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.1});
+$$('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
