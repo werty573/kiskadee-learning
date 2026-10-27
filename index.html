@@ -156,7 +156,7 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
 <header><div class="wrap nav">
   <a class="logo" href="#"><span class="mk"><i class="ti ti-feather"></i></span>Kiskadee Learning</a>
   <nav><a href="#courses">Courses</a><a href="#try">Free practice</a><a href="#timetable">Timetable</a><a href="#tutor">Your tutor</a></nav>
-  <a class="btn btn-primary" href="#courses">Enrol now</a>
+  <a class="btn btn-primary" href="#courses">Enroll now</a>
 </div></header>
 
 <main>
@@ -249,7 +249,7 @@ function courses(){
     <div class="in"><div class="lv"><span><i class="ti ti-school"></i>${c.forms}</span><span><i class="ti ti-users"></i>Live or self-paced</span></div>
     <h3>${c.t}</h3><p>${c.d}</p>
     <details class="syl"><summary>What's covered</summary><ul>${c.syl.map(s=>`<li>${s}</li>`).join('')}</ul></details>
-    <div class="foot"><span class="pr"><small>from </small>TT$${c.from}<small> / month</small></span><button class="btn btn-primary" data-enrol="${c.id}">Enrol</button></div></div></article>`).join('');
+    <div class="foot"><span class="pr"><small>from </small>TT$${c.from}<small> / month</small></span><button class="btn btn-primary" data-enrol="${c.id}">Enroll</button></div></div></article>`).join('');
 }
 $('#subj').onclick=e=>{const b=e.target.closest('button');if(!b)return;$$('#subj button').forEach(x=>x.setAttribute('aria-pressed',x===b));subj=b.dataset.s;courses()};
 courses();
